@@ -1,0 +1,31 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # or your default branch
+
+permissions:
+  contents: write  # Required for pushing to gh-pages
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH  # Add uv to PATH if needed
+
+      - name: Install MkDocs using uv
+        run: |
+          uv venv 
+          uv pip install mkdocs
+
+      - name: Deploy to GitHub Pages
+        run: |
+          cd qndes-homepage && uv run mkdocs gh-deploy --force

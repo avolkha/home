@@ -1,0 +1,23 @@
+site_name: ""
+site_url: https://avolkha.github.io/home/
+theme:
+  name: material
+  features:
+      - navigation.footer  # optional, but keep if you use custom footers
+  palette:
+    primary: white
+plugins:
+  - blog:
+      blog_dir: ./blog/
+      authors: true
+      authors_file: ".authors.yml"
+  - rss:
+      match_path: posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+extra_css:
+  - styles/extra.css
+
