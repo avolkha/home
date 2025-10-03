@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://avolkha.github.io/home/blog/2025/09/28/picking-up-gr-again/">
+        <link rel="canonical" href="https://avolkha.github.io/home/blog/2025/09/28/thoughts-on-data-pipelines/">
       
       
-        <link rel="prev" href="../thoughts-on-data-pipelines/">
+        <link rel="prev" href="../../../03/22/starting-a-new-blog/">
       
+      
+        <link rel="next" href="../picking-up-gr-again/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
@@ -23,7 +25,7 @@
     
     
       
-        <title>Picking up GR again - </title>
+        <title>Thoughts on data pipelines - </title>
       
     
     
@@ -74,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-no-end-to-end-responsibility-for-data-pipelines" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Picking up GR again
+              Thoughts on data pipelines
             
           </span>
         </div>
@@ -366,6 +373,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-no-end-to-end-responsibility-for-data-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. No end-to-end responsibility for data pipelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-centralized-data-platforms-are-bound-to-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Centralized data platforms are bound to fail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Costs for processing data scale linearly, but expected revenue does not
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -432,7 +474,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -456,35 +498,46 @@
 
 
 
-  <h1>Picking up GR again</h1>
+  <h1>Thoughts on data pipelines</h1>
 
-<p>During my studies I never managed to take a proper course on general relativity. 
-There were a lot of references in many places, but I never got the full picture.
-Recently, I cought a bad cold and had to stay in bed for a couple of days and starting to watch the MIT lectures on GR from 2020 after being bored watching series (I can recommend those, very well explained).
-I've made it until lecture 6 or 7 and learned (or re-learned/remembered) already quite a lot which I was missing. </p>
+<p>Getting the data to the place where it is consumed is still a challenge - it seems even more than the challenging than development of the actual AI algorithms which end up in your product.
+In our project, we went through several stages of tackling this problem which I will summarize here.
+Largely, I will comment on the problems and obstacles which we encountered.</p>
 <!-- more -->
-
-<p>First things I've learned/remembered actually concerned special relativity:</p>
-<ul>
-<li>Resting bodies are "flowing" through time (of course they are not flowing at all - this is just an analogy also in everything which follows below.)</li>
-<li>For moving observers such bodies are "flowing" through space as well</li>
-<li>The "total flux" must be constant for all observers (only valid in special relativity)</li>
-<li>This means that the time of the "resting" body must be passing slower for the moving observer, because there is less "flux" in time direction from it's point of view</li>
-</ul>
-<p>Second concerns a nice little thought experiment which explains why there must be a gravitational red shift:</p>
-<ul>
-<li>Suppose you are on top of a tower dropping a rock</li>
-<li>At the bottom of the tower sits a device that turns the entire rock into energy and sends it back up</li>
-<li>When the photon arrives at the top of the tower, you collect it and turn it back into a rock</li>
-<li>The rock will have higher mass than in the first round trip as it gained the height energy (~mgh) as energy which is then transferred into mass</li>
-<li>This would yield a perpetuum mobile unless there is a gravitational red shift when sending the photon back up which reduces the energy</li>
-</ul>
-<p>Other important aspects:</p>
-<ul>
-<li>The "flux" of spacetime is not constant in GR (again, the flux picture here is an analogy and not an adaquate representation)</li>
-<li>The metric tensor represents the flux in a certain region of space time and depends on gravity</li>
-</ul>
-<p>I hope I will manage to finish the series, it seem really intersting.</p>
+<p>The first obstacle we ran into is an organizatorial one.</p>
+<h3 id="1-no-end-to-end-responsibility-for-data-pipelines">1. No end-to-end responsibility for data pipelines</h3>
+<p>Fixing data pipelines is really hard when you first have to figure out who can help you with your missing data.
+In a large project, this can take a substantial amount of time where you get referred to many different teams until you find the right person that can help you with your issue.
+This can happen when the data piplelines become complex and stretch accross multiple teams among which no team has end-to-end responsibility.
+The lack of end-to-end responsibility directly leads to a lack of observability because no team would care about monitorying the full data pipeline.</p>
+<p>This issue can be fixed by establishing stream aligned teams which have this responsibility. 
+It is really important though that those teams have both the technical means as well as organizatorial to take on this responsibility.
+In our project this was not possible as for example the people training the neural networks were strictly separated from the people responsible for the data.
+We could clearly see that such a seperation was very inefficient as we became much faster as a project during task forces where such barriers were removed.</p>
+<h3 id="2-centralized-data-platforms-are-bound-to-fail">2. Centralized data platforms are bound to fail</h3>
+<p>We tried several iterations of "the central data platform for everyone in the project".
+All of them failed, because they would always pose a bottleneck for the data plattform.</p>
+<p>The reason is first of all that users which are forced to use a central plattform most likely will not use it in a sensible way.
+Each of the stream aligned teams should at least contain one platform expert who knows how to use the platform properly. 
+If this is not the case the 'noisy neighbour' problem will eventually degrade the performance for all data pipelines. </p>
+<p>It is much better to have a de-centralized data platform where each team can use the tools they are familiar with.
+The data itself can reside in a common data lake (with governance etc.) such that complexity is only introduced on the "compute side of things" but not on the data.  </p>
+<h3 id="3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not">3. Costs for processing data scale linearly, but expected revenue does not</h3>
+<p>In a project that develops a new product it's hard to estimate the revenue it generates.
+The best proxy I can give is simply the performance KPI of the machine learning algorithms which consume the incoming data.
+These performance KPI <strong>do not scale linear with respect to the amount of data used for training</strong>.
+This is a problem as the costs will always scale linearly with the amount of data as you have to pay for additional compute, storage, license costs etc..
+We have tackled this problem in two ways:</p>
+<ol>
+<li>Try to reduce costs by switching to cheaper solutions for the bulk data</li>
+<li>Try to only process data from which the KPI would improve significantly </li>
+</ol>
+<p>Both of those approaches have their own issues. 
+The main problem of the first one is that you are basically in a constant migration process to make the processing cheaper and cheaper.
+This introduces a significant development overhead for the teams developing the data pipelines.
+The second approach is difficult as you sort of have to have solved (at least conceptually) the problem which your AI algorithm wants to approximate. 
+This puts you in a hen and egg like situation.</p>
+<p>At this point it is still unclear wich of the two approaches is the more promising one.</p>
 
 
 
@@ -521,7 +574,7 @@ I've made it until lecture 6 or 7 and learned (or re-learned/remembered) already
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../thoughts-on-data-pipelines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Thoughts on data pipelines">
+          <a href="../../../03/22/starting-a-new-blog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Starting a new blog">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -531,11 +584,27 @@ I've made it until lecture 6 or 7 and learned (or re-learned/remembered) already
                 Previous
               </span>
               <div class="md-ellipsis">
-                Thoughts on data pipelines
+                Starting a new blog
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../picking-up-gr-again/" class="md-footer__link md-footer__link--next" aria-label="Next: Picking up GR again">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Picking up GR again
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
