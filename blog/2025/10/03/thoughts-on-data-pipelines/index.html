@@ -499,7 +499,7 @@
   <h1>Thoughts on data pipelines</h1>
 
 <p>Getting the data to the place where it is consumed is still a challenge - it seems even more than the challenging than development of the actual AI algorithms which end up in your product.
-In our project, we went through several stages of tackling this problem which I will summarize here.
+In our project, we went through several stages of tackling this problem and I want to sketch a few of those here.
 Largely, I will comment on the problems and obstacles which we encountered.</p>
 <!-- more -->
 <p>The first obstacle we ran into is an organizatorial one.</p>
@@ -510,32 +510,30 @@ This can happen when the data piplelines become complex and stretch accross mult
 The lack of end-to-end responsibility directly leads to a lack of observability because no team would care about monitorying the full data pipeline.</p>
 <p>This issue can be fixed by establishing stream aligned teams which have this responsibility. 
 It is really important though that those teams have both the technical means as well as organizatorial to take on this responsibility.
-In our project this was not possible as for example the people training the neural networks were strictly separated from the people responsible for the data.
-We could clearly see that such a seperation was very inefficient as we became much faster as a project during task forces where such barriers were removed.</p>
+For example, if you separate your data engineers from the data scientists which consume the data in different teams this is impossible.</p>
 <h3 id="2-centralized-data-platforms-are-bound-to-fail">2. Centralized data platforms are bound to fail</h3>
 <p>We tried several iterations of "the central data platform for everyone in the project".
 All of them failed, because they would always pose a bottleneck for the data plattform.</p>
 <p>The reason is first of all that users which are forced to use a central plattform most likely will not use it in a sensible way.
 Each of the stream aligned teams should at least contain one platform expert who knows how to use the platform properly. 
 If this is not the case the 'noisy neighbour' problem will eventually degrade the performance for all data pipelines. </p>
-<p>It is much better to have a de-centralized data platform where each team can use the tools they are familiar with.
+<p>It is much better to have a de-centralized/federated data platform where each team can use the tools they are familiar with.
 The data itself can reside in a common data lake (with governance etc.) such that complexity is only introduced on the "compute side of things" but not on the data.  </p>
 <h3 id="3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not">3. Costs for processing data scale linearly, but expected revenue does not</h3>
 <p>In a project that develops a new product it's hard to estimate the revenue it generates.
 The best proxy I can give is simply the performance KPI of the machine learning algorithms which consume the incoming data.
 These performance KPI <strong>do not scale linear with respect to the amount of data used for training</strong>.
 This is a problem as the costs will always scale linearly with the amount of data as you have to pay for additional compute, storage, license costs etc..
-We have tackled this problem in two ways:</p>
+There are two ways to tackle the porblem:</p>
 <ol>
-<li>Try to reduce costs by switching to cheaper solutions for the bulk data</li>
+<li>Try to reduce costs by switching to cheaper solutions for the bulk data and therby "flatting" the cost curve</li>
 <li>Try to only process data from which the KPI would improve significantly </li>
 </ol>
 <p>Both of those approaches have their own issues. 
 The main problem of the first one is that you are basically in a constant migration process to make the processing cheaper and cheaper.
 This introduces a significant development overhead for the teams developing the data pipelines.
-The second approach is difficult as you sort of have to have solved (at least conceptually) the problem which your AI algorithm wants to approximate. 
-This puts you in a hen and egg like situation.</p>
-<p>At this point it is still unclear wich of the two approaches is the more promising one.</p>
+The second approach is difficult as you sort of have to have solved (at least conceptually) the problem which your AI algorithm wants to approximate. </p>
+<p>At this point it is still unclear to me which of the two approaches is the more promising one.</p>
 
 
 
