@@ -398,7 +398,7 @@
         <li class="md-nav__item">
   <a href="#3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Costs for processing data scale linearly, but expected revenue does not
+      3. Costs for processing data scale linearly but expected revenue does not
     </span>
   </a>
   
@@ -499,15 +499,14 @@
   <h1>Thoughts on data pipelines</h1>
 
 <p>Getting the data to the place where it is consumed is still a challenge - it seems even more than the challenging than development of the actual AI algorithms which end up in your product.
-In our project, we went through several stages of tackling this problem and I want to sketch a few of those here.
-Largely, I will comment on the problems and obstacles which we encountered.</p>
+In our project, we went through several stages of tackling this problem and I want to sketch a few of those problems here.</p>
 <!-- more -->
-<p>The first obstacle we ran into is an organizatorial one.</p>
+
 <h3 id="1-no-end-to-end-responsibility-for-data-pipelines">1. No end-to-end responsibility for data pipelines</h3>
 <p>Fixing data pipelines is really hard when you first have to figure out who can help you with your missing data.
 In a large project, this can take a substantial amount of time where you get referred to many different teams until you find the right person that can help you with your issue.
 This can happen when the data piplelines become complex and stretch accross multiple teams among which no team has end-to-end responsibility.
-The lack of end-to-end responsibility directly leads to a lack of observability because no team would care about monitorying the full data pipeline.</p>
+The lack of end-to-end responsibility directly leads to a lack of observability because no team would care about monitoring the full data pipeline.</p>
 <p>This issue can be fixed by establishing stream aligned teams which have this responsibility. 
 It is really important though that those teams have both the technical means as well as organizatorial to take on this responsibility.
 For example, if you separate your data engineers from the data scientists which consume the data in different teams this is impossible.</p>
@@ -519,12 +518,12 @@ Each of the stream aligned teams should at least contain one platform expert who
 If this is not the case the 'noisy neighbour' problem will eventually degrade the performance for all data pipelines. </p>
 <p>It is much better to have a de-centralized/federated data platform where each team can use the tools they are familiar with.
 The data itself can reside in a common data lake (with governance etc.) such that complexity is only introduced on the "compute side of things" but not on the data.  </p>
-<h3 id="3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not">3. Costs for processing data scale linearly, but expected revenue does not</h3>
+<h3 id="3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not">3. Costs for processing data scale linearly but expected revenue does not</h3>
 <p>In a project that develops a new product it's hard to estimate the revenue it generates.
-The best proxy I can give is simply the performance KPI of the machine learning algorithms which consume the incoming data.
+The best proxy for that I can give is simply the performance KPI of the machine learning algorithms which consume the incoming data.
 These performance KPI <strong>do not scale linear with respect to the amount of data used for training</strong>.
 This is a problem as the costs will always scale linearly with the amount of data as you have to pay for additional compute, storage, license costs etc..
-There are two ways to tackle the porblem:</p>
+There are two ways to tackle the problem:</p>
 <ol>
 <li>Try to reduce costs by switching to cheaper solutions for the bulk data and therby "flatting" the cost curve</li>
 <li>Try to only process data from which the KPI would improve significantly </li>
@@ -532,7 +531,9 @@ There are two ways to tackle the porblem:</p>
 <p>Both of those approaches have their own issues. 
 The main problem of the first one is that you are basically in a constant migration process to make the processing cheaper and cheaper.
 This introduces a significant development overhead for the teams developing the data pipelines.
-The second approach is difficult as you sort of have to have solved (at least conceptually) the problem which your AI algorithm wants to approximate. </p>
+The second approach is difficult as you have to have solved the problem which your AI algorithm wants to approximate "in some other way".
+This leads to a classic bootstrapping problem.
+For example, if you would have an AI which is capable of deciding which data is important for the training of another AI: Why not use this AI to solve the original problem?</p>
 <p>At this point it is still unclear to me which of the two approaches is the more promising one.</p>
 
 
