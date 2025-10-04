@@ -511,8 +511,7 @@ The lack of end-to-end responsibility directly leads to a lack of observability 
 It is really important though that those teams have both the technical means as well as organizatorial to take on this responsibility.
 For example, if you separate your data engineers from the data scientists which consume the data in different teams this is impossible.</p>
 <h3 id="2-centralized-data-platforms-are-bound-to-fail">2. Centralized data platforms are bound to fail</h3>
-<p>We tried several iterations of "the central data platform for everyone in the project".
-All of them failed, because they would always pose a bottleneck for the data plattform.</p>
+<p>"The central data platform for everyone in the project" always poses a bottleneck for the data consumers besides the obvious synergies you gain from not having all teams having to set up their own plattform.</p>
 <p>The reason is first of all that users which are forced to use a central plattform most likely will not use it in a sensible way.
 Each of the stream aligned teams should at least contain one platform expert who knows how to use the platform properly. 
 If this is not the case the 'noisy neighbour' problem will eventually degrade the performance for all data pipelines. </p>
