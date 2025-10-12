@@ -404,6 +404,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ideas-for-a-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ideas for a solution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thoughts
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -472,7 +490,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -534,6 +552,24 @@ The second approach is difficult as you have to have solved the problem which yo
 This leads to a classic bootstrapping problem.
 For example, if you would have an AI which is capable of deciding which data is important for the training of another AI: Why not use this AI to solve the original problem?</p>
 <p>At this point it is still unclear to me which of the two approaches is the more promising one.</p>
+<h3 id="ideas-for-a-solution">Ideas for a solution</h3>
+<p>So, how can we tackle those problems?
+The first two can actually be solved on a organizatorial level in terms of establishing a data mesh.
+This, however, is hard to do as organizations grow over time and teams should not be broken up because new teams always need time to find an efficient working mode.
+We don't always have the means to nor does it always make sense to re-shuffle teams.
+A way to solve this on a technical level would be to introduce a well defined interface to the data which is right shifted as much as possible such that data scientists have to deal as little as possible with data pipelines.
+A good interface seems to be an API where the data engineers/data platform team can "hide" their query engines behind.
+This reduces the integration effort and enables cost reduction easily. 
+However, you need an interface with enough throughput which is why <code>Apache Arrow Flight</code> becomes a valid option (you do not want to use REST).
+This also helps with the curve flattening strategy for the third problem as a stable interface can be provided and query engines can be switched behind it.
+Similarly, the query platform does not have to be a monolith and centralized. </p>
+<p>Tackling the second strategy in the third problem is even more challenging and it's viability largely depends on the type of AI problem you want to solve.
+In some cases, you can incorporate human input to pick interesting data for training.
+On large scales this is not viable anymore and the only hope is that there is a powerful foundation model which you can leverage.</p>
+<h3 id="final-thoughts">Final Thoughts</h3>
+<p>Data pipelines are the backbone of modern analytics, yet their challenges often go unacknowledged.
+Balancing technical innovation with organizational alignment requires careful planning and adaptability.
+While no single solution fits all scenarios, a hybrid approach—combining clear ownership, decentralized tools, and intelligent cost management—offers a path forward.   </p>
 
 
 
