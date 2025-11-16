@@ -31,7 +31,7 @@ I have a strong passion for solving complex problems, creating innovative soluti
 - Enabling the data pipelines and observability for video perception training (related technologies: **grafana**, **python**, **kubernetes**)
 - Lead Developer of a GPS trace enrichment service leveraging map provider APIs
 
-### **DevOps Enineer**
+### **DevOps Engineer**
 *Autonomous driving project at a global car supplier*
 
 **2022 - 2023**
