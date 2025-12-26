@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://avolkha.github.io/home/blog/2025/10/03/thoughts-on-data-pipelines/">
+        <link rel="canonical" href="https://avolkha.github.io/home/blog/2025/12/26/reading-on-medieval-cosmology/">
       
       
-        <link rel="prev" href="../../../09/28/picking-up-gr-again/">
+        <link rel="prev" href="../../../10/03/thoughts-on-data-pipelines/">
       
-      
-        <link rel="next" href="../../../12/26/reading-on-medieval-cosmology/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>Thoughts on data pipelines - </title>
+        <title>Reading on medieval cosmology - </title>
       
     
     
@@ -76,11 +74,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#1-no-end-to-end-responsibility-for-data-pipelines" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -113,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Thoughts on data pipelines
+              Reading on medieval cosmology
             
           </span>
         </div>
@@ -373,59 +366,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-no-end-to-end-responsibility-for-data-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. No end-to-end responsibility for data pipelines
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-centralized-data-platforms-are-bound-to-fail" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Centralized data platforms are bound to fail
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Costs for processing data scale linearly but expected revenue does not
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ideas-for-a-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ideas for a solution
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Final Thoughts
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -480,7 +420,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-10-03 00:00:00+00:00" class="md-ellipsis">October 3, 2025</time>
+                        <time datetime="2025-12-26 00:00:00+00:00" class="md-ellipsis">December 26, 2025</time>
                       </div>
                     </li>
                     
@@ -492,7 +432,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              4 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -516,62 +456,26 @@
 
 
 
-  <h1>Thoughts on data pipelines</h1>
+  <h1>Reading on medieval cosmology</h1>
 
-<p>Getting the data to the place where it is consumed is still a challenge - it seems even more than the challenging than development of the actual AI algorithms which end up in your product.
-In our project, we went through several stages of tackling this problem and I want to sketch a few of those problems here.</p>
+<p>I recently continued reading Kojève’s <em>Analysis of Zeno’s Paradox</em> and ordered several books mentioned there in order to deepen my understanding of the history of science. What fascinates me most about this topic is that it opens up a modern perspective on ancient problems, illuminating both how these issues were viewed thousands of years ago and how we understand them today.</p>
+<p>One particularly valuable book in this respect is <em>Medieval Cosmology</em> by Pierre Duhem. Duhem was a well-renowned physicist of the early twentieth century who also made significant contributions to the history of science.</p>
+<p>In this post, I will discuss some of the new insights I have gained from this book. Unless stated otherwise, what follows reflects my understanding of Duhem’s perspective.</p>
 <!-- more -->
 
-<h3 id="1-no-end-to-end-responsibility-for-data-pipelines">1. No end-to-end responsibility for data pipelines</h3>
-<p>Fixing data pipelines is really hard when you first have to figure out who can help you with your missing data.
-In a large project, you can spend a substantial amount of time where you get referred to many different teams until you find the right person that can help you with your issue.
-This occurs when the data piplelines become complex and stretch accross multiple teams among which no team has end-to-end responsibility.
-The lack of end-to-end responsibility directly leads to a lack of observability because no team would care about monitoring the full data pipeline.</p>
-<p>This issue can be fixed by establishing stream aligned teams which have this responsibility. 
-It is really important though that those teams have both the technical means as well as organizatorial to take on this responsibility.
-For example, if you separate your data engineers from the data scientists which consume the data in different teams this is impossible.</p>
-<h3 id="2-centralized-data-platforms-are-bound-to-fail">2. Centralized data platforms are bound to fail</h3>
-<p>"The central data platform for everyone in the project" always poses a bottleneck for the data consumers besides the obvious synergies you gain from not having all teams having to set up their own plattform.</p>
-<p>The reason is first of all that users which are forced to use a central plattform most likely will not use it in a sensible way.
-Each of the stream aligned teams should at least contain one platform expert who knows how to use the platform properly. 
-If this is not the case the 'noisy neighbour' problem will eventually degrade the performance for all data pipelines. </p>
-<p>It is much better to have a de-centralized/federated data platform where each team can use the tools they are familiar with.
-The data itself can reside in a common data lake (with governance etc.) such that complexity is only introduced on the "compute side of things" but not on the data.  </p>
-<h3 id="3-costs-for-processing-data-scale-linearly-but-expected-revenue-does-not">3. Costs for processing data scale linearly but expected revenue does not</h3>
-<p>In a project that develops a new product it's hard to estimate the revenue it generates.
-The best proxy for that I can give is simply the performance KPI of the machine learning algorithms which consume the incoming data.
-These performance KPI <strong>do not scale linear with respect to the amount of data used for training</strong>.
-This is a problem as the costs will always scale linearly with the amount of data as you have to pay for additional compute, storage, license costs etc..
-There are two ways to tackle the problem:</p>
-<ol>
-<li>Try to reduce costs by switching to cheaper solutions for the bulk data and therby "flatting" the cost curve</li>
-<li>Try to only process data from which the KPI would improve significantly </li>
-</ol>
-<p>Both of those approaches have their own issues. 
-The main problem of the first one is that you are basically in a constant migration process to make the processing cheaper and cheaper.
-This introduces a significant development overhead for the teams developing the data pipelines.
-The second approach is difficult as you have to have solved the problem which your AI algorithm wants to approximate "in some other way".
-This leads to a classic bootstrapping problem.
-For example, if you would have an AI which is capable of deciding which data is important for the training of another AI: Why not use this AI to solve the original problem?</p>
-<p>At this point it is still unclear to me which of the two approaches is the more promising one.</p>
-<h3 id="ideas-for-a-solution">Ideas for a solution</h3>
-<p>So, how can we tackle those problems?
-The first two can actually be solved on a organizatorial level in terms of establishing a data mesh.
-This, however, is hard to do as organizations grow over time and teams should not be broken up because new teams always need time to find an efficient working mode.
-We don't always have the means to nor does it always make sense to re-shuffle teams.
-A way to solve this on a technical level would be to introduce a well defined interface to the data which is right shifted as much as possible such that data scientists have to deal as little as possible with data pipelines.
-A good interface seems to be an API where the data engineers/data platform team can "hide" their query engines behind.
-This reduces the integration effort and enables cost reduction easily. 
-However, you need an interface with enough throughput which is why <code>Apache Arrow Flight</code> becomes a valid option (you do not want to use REST).
-This also helps with the curve flattening strategy for the third problem as a stable interface can be provided and query engines can be switched behind it.
-Similarly, the query platform does not have to be a monolith and centralized. </p>
-<p>Tackling the second strategy in the third problem is even more challenging and it's viability largely depends on the type of AI problem you want to solve.
-In some cases, you can incorporate human input to pick interesting data for training.
-On large scales this is not viable anymore and the only hope is that there is a powerful foundation model which you can leverage.</p>
-<h3 id="final-thoughts">Final Thoughts</h3>
-<p>Data pipelines are the backbone of modern analytics, yet their challenges often go unacknowledged.
-Balancing technical innovation with organizational alignment requires careful planning and adaptability.
-While no single solution fits all scenarios, a hybrid approach—combining clear ownership, decentralized tools, and intelligent cost management—offers a path forward.   </p>
+<p>To understand how medieval physicists thought about the world, one has to begin with Aristotelian physics, also known as <em>Peripatetic Physics</em>. I will not attempt a complete account of it here (indeed, I do not yet fully understand it myself, and it requires separate investigation).</p>
+<p>This framework of physics was eventually superseded by the modern physics of the sixteenth century, but not in the revolutionary manner often suggested by Enlightenment narratives. Rather, the transition occurred gradually, with the old theory being replaced step by step. The widespread notion of the “dark ages of science” is therefore a prejudice that persists to this day.</p>
+<p>Notably, it was the influence of the Church that in many cases drove developments toward modern physics. Certain Aristotelian assumptions in cosmology conflicted with central Christian dogmas and were therefore challenged.</p>
+<p>One such assumption was that the world is infinite both in space and in time, alongside the claim that an actual infinity of distinct objects is contradictory. This clashes with the Christian doctrine of the immortal soul: if the world were infinite, an infinite number of souls would have accumulated over time, which would be impossible according to the second assumption.</p>
+<p>Several responses to this dilemma emerged:</p>
+<ul>
+<li><strong>Stoics</strong> denied the immortality of the soul altogether.</li>
+<li><strong>Neoplatonists</strong> believed in the reincarnation of the soul: there is a finite number of souls that are reused over time.</li>
+<li><strong>Avicenna</strong> held that the restriction on actual infinities applies only to entities with spatial extension and position. Souls, lacking spatial extent, would not be subject to this restriction. He nevertheless maintained the Aristotelian requirement that causal sequences must be finite, since there must be a first cause. This appears to conflict with the assumption of an infinite world, which Avicenna reconciled by distinguishing between <em>essential causes</em>, which cannot be infinite, and auxiliary or preparatory causes.<br />
+<em>Note (personal): This is particularly interesting, as it seems to anticipate a form of “memorylessness” that allows new causal sequences to begin spontaneously, an idea also found in Kant. It would be worth investigating whether this is genuinely novel in Avicenna or already present in Aristotle.</em></li>
+<li><strong>Averroes</strong>, drawing on Avicenna, argued that after death all souls are united into a single “super-intelligence,” since numerical distinction applies only to objects in space.</li>
+</ul>
+<p><em>To be continued.</em></p>
 
 
 
@@ -608,7 +512,7 @@ While no single solution fits all scenarios, a hybrid approach—combining clear
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../09/28/picking-up-gr-again/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Picking up GR again">
+          <a href="../../../10/03/thoughts-on-data-pipelines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Thoughts on data pipelines">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -618,27 +522,11 @@ While no single solution fits all scenarios, a hybrid approach—combining clear
                 Previous
               </span>
               <div class="md-ellipsis">
-                Picking up GR again
+                Thoughts on data pipelines
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../../12/26/reading-on-medieval-cosmology/" class="md-footer__link md-footer__link--next" aria-label="Next: Reading on medieval cosmology">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Reading on medieval cosmology
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
