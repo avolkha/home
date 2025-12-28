@@ -6,7 +6,7 @@ theme:
       - navigation.footer  # optional, but keep if you use custom footers
   palette:
     primary: white
-draft_docs:
+draft_docs: |
   - ./drafts
 plugins:
   - blog:
