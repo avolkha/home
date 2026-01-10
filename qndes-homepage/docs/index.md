@@ -1,32 +1,41 @@
 # Start
 
-Hi, I’m Andreas — a physicist, coder and philosophy enthusiast.
+__Welcome to my homepage!__
 
-Welcome to my homepage!
 
-- 📬 [Email me](mailto:avolkha1@gmail.com)
-- 💻 [GitHub](https://github.com/avolkha)
 
 <div class="grid cards" markdown>
+
+-   __About Me__
+
+    --- 
+    ![Avatar](./assets/me.jpeg)
+    
+    Hi, I’m Andreas — a physicist, coder, and philosophy enthusiast.
+    Check out my CV for a summary of my professional experience, education, and skills.
+
+    [View CV](CV.md)
+
+    ---
 
 -    __Blog__
 
     ---
-    You can find my thoughts on physics, coding, and philosophy here.  
+    Here, you'll find my thoughts on physics, coding, and philosophy.
+    It's a personal journal for capturing interesting ideas I don't want to forget.
 
-    [:octicons-arrow-right-24: Read posts](blog/index.md)
-
-    ---
-
--   __CV__
+    [Read posts](blog/index.md)
 
     ---
 
-    A summary of my professional experience, education, and skills.  
+- __Contact__
 
-    [:octicons-arrow-right-24: View CV](CV.md)
+    --- 
+    📬 [Email](mailto:avolkha1@gmail.com)
 
-    ---
+    💻 [GitHub](https://github.com/avolkha)
 
+    --- 
 
 </div>
+
