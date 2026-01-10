@@ -7,4 +7,6 @@ Welcome to my homepage!
 - 📬 [Email me](mailto:avolkha1@gmail.com)
 - 💻 [GitHub](https://github.com/avolkha)
 
-![Avatar](./assets/me.jpeg)
+# Blog
+
+{{ cards(tags=["blog"]) }}
