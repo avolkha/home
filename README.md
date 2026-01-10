@@ -1,3 +1,3 @@
 # How to deploy the blog
 
-Go to `qndes-diary` and run `mkdocs gh-deploy`.
+Go to `qndes-homepage` and run `mkdocs gh-deploy`.

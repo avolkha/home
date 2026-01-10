@@ -2,6 +2,7 @@
 name = "qndes-homepage"
 version = "0.1.0"
 description = "my homepage"
+license = "AGPL-3.0-or-later"
 authors = [
     {name = "Andreas Volkhardt",email = "avolkha1@gmail.com"}
 ]
@@ -15,6 +16,7 @@ dependencies = [
     "mkdocs-blogging-plugin (>=2.2.11,<3.0.0)",
     "mkdocs-macros-plugin (>=1.3.7,<2.0.0)",
     "mkdocs-rss-plugin>=1.17.3",
+    "mkdocs-roamlinks-plugin>=0.3.2",
 ]
 
 [tool.uv]
