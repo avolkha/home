@@ -1,5 +1,11 @@
-# How to deploy the blog
+# Setup
 
+run `uv sync`
 
-1. run `uv sync`
-2. Go to `qndes-homepage` and run `uv run mkdocs gh-deploy`.
+# How to build the homepage
+
+Go to `qndes-homepage` and run `uv run mkdocs build`.
+
+# How to deploy the homepage
+
+Go to `qndes-homepage` and run `uv run mkdocs gh-deploy`.
