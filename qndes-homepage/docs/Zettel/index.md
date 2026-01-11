@@ -1,0 +1,1 @@
+In this section I put notes about things I have read or watched which I want to remember and might write a blog post about later.
