@@ -1,9 +1,5 @@
 # Start
 
-__Welcome to my homepage!__
-
-
-
 <div class="grid cards" markdown>
 
 -   __About Me__
@@ -29,6 +25,7 @@ __Welcome to my homepage!__
     ---
 
 -   __Zettelkasten__
+
     ---
     My Zettelkasten is a collection of notes on various topics that I have read about or thought about.
     Each note is a small piece of information that is connected to other notes in the collection.
