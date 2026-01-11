@@ -18,6 +18,7 @@ ${2:Motivation for reading the note}
 ${3:Summary of key insights from the note}
 
 ## What do I think about it?
+
 ${4:Personal reflections on the note}
 
 ## What does it connect to?
