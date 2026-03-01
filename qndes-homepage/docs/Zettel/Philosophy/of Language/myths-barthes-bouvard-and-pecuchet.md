@@ -1,10 +1,10 @@
-# AI as Modern Myth: Disconnected Discourse and Reality
+# Barthes' Myths: Bouvard and Pécuchet
 
 ## What did I read?
 
 Roland Barthes: Mythen des Alltags, 286, Suhrkamp
 
-# Why did I read it?
+## Why did I read it?
 
 Thinking about Bouvard and Pécuchet and how they failed miserably once they had the resources to do what they thought they could do.
 I feel like it's very similar with AI currently: We can now build everything using AI but we still fail at many levels.
