@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -19,7 +19,7 @@ jobs:
       - name: Install uv
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH  # Add uv to PATH if needed
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Install MkDocs using uv
         run: |
