@@ -1,0 +1,32 @@
+.md-header {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 0 transparent; /* remove drop shadow if needed */
+}
+
+/* Optional: update logo/link colors to match */
+.md-header__title,
+.md-header__button,
+.md-tabs,
+.md-header__topic {
+  color: black;
+}
+/* Hide the logo */
+.md-header__button.md-logo {
+  display: none;
+}
+
+/* Hide the site title text */
+.md-header__title {
+  display: none;
+}
+.md-footer-meta{
+    display: none;
+}
+.md-footer {
+  background-color: white;
+  color: black;
+}
+#start{
+    display: none;
+}
