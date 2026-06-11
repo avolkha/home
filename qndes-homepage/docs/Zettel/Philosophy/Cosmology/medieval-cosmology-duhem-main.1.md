@@ -1,4 +1,4 @@
-# Title of the note
+# Medieval cosmology, Pierre Duhem
 
 ## What did I read?
 
